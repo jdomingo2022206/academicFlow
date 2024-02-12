@@ -1,0 +1,12 @@
+{
+  "name": "academicflow",
+  "version": "1.0.0",
+  "description": "Proyecto de flow académico con Profesores, Alumnos, Cursos, Login y Validaciones.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jonathan Domingo",
+  "license": "ISC"
+}
