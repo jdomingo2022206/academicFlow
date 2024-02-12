@@ -28,7 +28,8 @@ const UserSchema = Schema ({
     google:{
         type: Boolean,
         default: false
-    }
+    },
+    cursos: [{ type: Schema.Types.ObjectId, ref: 'Course' }]
 });
 
 module.exports = model('User', UserSchema);
