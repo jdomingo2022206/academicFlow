@@ -55,7 +55,22 @@ const userDelete = async (req, res) => {
 }
 
 const userPost = async (req, res) =>{
-    const { nombre, correo, password, role } = req.body;
+    const { nombre, correo, password} = req.body;
+    const role = "STUDENT_ROLE"
+    const usuario = new Usuario({nombre, correo, password, role});
+
+    const salt = bcryptjs.genSaltSync();
+    usuario.password = bcryptjs.hashSync(password, salt);
+
+    await usuario.save();
+    res.status(200).json({
+        usuario
+    });
+}
+
+const userTeacherPost = async (req, res) =>{
+    const { nombre, correo, password } = req.body;
+    const role = "TEACHER_ROLE"
     const usuario = new Usuario({nombre, correo, password, role});
 
     const salt = bcryptjs.genSaltSync();
@@ -70,6 +85,7 @@ const userPost = async (req, res) =>{
 module.exports = {
     userDelete,
     userPost,
+    userTeacherPost,
     userGet,
     getUserByid,
     userPut
