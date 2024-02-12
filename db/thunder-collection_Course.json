@@ -1,0 +1,79 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Course",
+    "dateExported": "2024-02-12T17:51:17.956Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "be504437-d4e5-42e6-a67e-ef0fcdfa11f3",
+            "colId": "5a60542a-54c4-4eef-8cbf-594ffe474a41",
+            "containerId": "",
+            "name": "coursePost",
+            "url": "http://localhost:10433/academic/course",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-12T17:39:16.521Z",
+            "modified": "2024-02-12T17:49:53.918Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4673c54c-cfab-4b1f-b2ca-c6f69c680c47",
+            "colId": "5a60542a-54c4-4eef-8cbf-594ffe474a41",
+            "containerId": "",
+            "name": "courseGet",
+            "url": "http://localhost:10433/academic/course",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-02-12T17:39:28.665Z",
+            "modified": "2024-02-12T17:50:11.322Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "566e2f11-92a5-4672-bf53-08f6eb917eb7",
+            "colId": "5a60542a-54c4-4eef-8cbf-594ffe474a41",
+            "containerId": "",
+            "name": "getCourseById",
+            "url": "http://localhost:10433/academic/course/id",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-02-12T17:39:39.537Z",
+            "modified": "2024-02-12T17:50:19.832Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "42351267-5d2e-4b6d-b870-ef54844d7f62",
+            "colId": "5a60542a-54c4-4eef-8cbf-594ffe474a41",
+            "containerId": "",
+            "name": "coursePut",
+            "url": "http://localhost:10433/academic/course/idconbody",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-02-12T17:39:51.520Z",
+            "modified": "2024-02-12T17:50:30.370Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a12883e3-8d6d-48f0-a599-3c18511e3457",
+            "colId": "5a60542a-54c4-4eef-8cbf-594ffe474a41",
+            "containerId": "",
+            "name": "courseDelete",
+            "url": "http://localhost:10433/academic/course/id",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-02-12T17:49:12.744Z",
+            "modified": "2024-02-12T17:50:42.926Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
