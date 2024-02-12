@@ -1,0 +1,53 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Login",
+    "dateExported": "2024-02-09T17:46:57.393Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "58d6da69-d9ab-4672-9a16-dd82b4a4bb25",
+            "colId": "7b0edb2f-ccb0-40a4-9c63-99aefdc523f8",
+            "containerId": "",
+            "name": "logGet",
+            "url": "http://localhost:3000/api/log?email=j@gmail.com&pass=12345",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-02-09T16:53:53.320Z",
+            "modified": "2024-02-09T17:00:18.806Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "email",
+                    "value": "j@gmail.com",
+                    "isPath": false
+                },
+                {
+                    "name": "pass",
+                    "value": "12345",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "f815e33f-f204-4746-835e-b39ae1ef3a9e",
+            "colId": "7b0edb2f-ccb0-40a4-9c63-99aefdc523f8",
+            "containerId": "",
+            "name": "logCrypGet",
+            "url": "http://localhost:3000/api/log/cryp",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-02-09T17:10:50.423Z",
+            "modified": "2024-02-09T17:41:15.767Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"correo\" : \"j@gmail.com\",\n  \"password\" : \"12345\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
