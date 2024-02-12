@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
 const { validateCampus } = require('../middlewares/validate-campus');
-const { existentCourseById, existentCourse } = require('../helpers/db-validators');
+const { existentCourseById, existentCourse, teacherValid } = require('../helpers/db-validators');
 const {courseDelete, coursePost, courseGet, getCourseByid, coursePut} = require('../controllers/course.controller')
 const { userDelete, userPost, userTeacherPost, userGet, getUserByid, userPut } = require('../controllers/user.controller');
 const router = Router();
