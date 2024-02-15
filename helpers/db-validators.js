@@ -26,6 +26,7 @@ const roleValid = async (role='') => {
 
 const existentCourseById = async ( id = '') => {
     const existCourse = await Course.findOne({id});
+    
     if(existCourse){
         throw new Error(`El curso con el ${ id } no existe`);
     }
@@ -33,18 +34,40 @@ const existentCourseById = async ( id = '') => {
 
 const existentCourse = async (name = '') => {
     const existCourse = await Course.findOne({name});
-    if(existCourse){
-        throw new Error(`El email ${ name } ya fue registrado`);
+
+    if (existCourse) {
+        throw new Error(`El curso ${name} ya fue registrado`);
     }
 }
 
 const teacherValid = async (correo='') => {
     const existTeacher = await User.findOne({correo});
 
-    if(!existRole){
+    if(!existTeacher){
         throw new Error(`El profesor ${ correo } no existe en base de datos.` )
     }
 }
+
+const existUserByEmail  = async (correo='') => {
+    try {
+        const user = await User.findOne({correo});
+        if (user) {
+            return {
+                id: user._id,
+                name: user.nombre,
+                email: user.correo,
+                status: user.estado
+            };
+        } else {
+            throw new Error(`El user ${ correo } no existe en base de datos.` )
+            return null; 
+        }
+    } catch (error) {
+        console.error('Error al buscar usuario por correo electrónico:', error);
+        throw error; 
+    }
+}
+
 
 module.exports = {
     existentEmail,
@@ -52,5 +75,6 @@ module.exports = {
     roleValid,
     existentCourseById,
     existentCourse,
+    existUserByEmail,
     teacherValid
 }

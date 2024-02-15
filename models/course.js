@@ -12,10 +12,18 @@ const CourseSchema = Schema ({
     img:{
         type: String
     },
-    teacher: { 
+    teacherId: { 
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: [true, 'El profesor es obligatorio']
+    },
+    teacherName: { 
+        type: String,
+        required: [true, 'El profesor nombre es obligatorio']
+    },
+    teacherMail: { 
+        type: String,
+        required: [true, 'El profesor email es obligatorio']
     },
     students: [{
         type: Schema.Types.ObjectId,

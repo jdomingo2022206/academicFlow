@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
 const { validateCampus } = require('../middlewares/validate-campus');
-const { existentCourseById, existentCourse, teacherValid } = require('../helpers/db-validators');
+const { existentCourseById, existentCourse } = require('../helpers/db-validators');
 const {courseDelete, coursePost, courseGet, getCourseByid, coursePut} = require('../controllers/course.controller')
 const { userDelete, userPost, userTeacherPost, userGet, getUserByid, userPut } = require('../controllers/user.controller');
 const router = Router();
@@ -21,6 +21,10 @@ router.put(
     [
         check("id","El id no es un formato válido de MongoDB").isMongoId(),
         check("id").custom(existentCourseById),
+        //check("name","El nombre es obligatorio").not().isEmpty(),
+        check("name").custom(existentCourse),
+        check("desc","La descripcion debe ser mayor a 15 caracteres").isLength({min: 15,}),
+        check("teacher","Este no es un correo válido").isEmail(),
         validateCampus
     ], coursePut);
 
@@ -36,11 +40,12 @@ router.delete(
 router.post(
     "/", 
     [
-        check("nombre","El nombre es obligatorio").not().isEmpty(),
-        check("nombre").custom(existentCourse),
-        check("descripcion","La descripcion debe ser mayor a 15 caracteres").isLength({min: 15,}),
-        check("profesor (correo)","Este no es un correo válido").isEmail(),
-        check("profesor (correo)").custom(teacherValid),
+        check("name","El nombre es obligatorio").not().isEmpty(),
+        check("name").custom(existentCourse),
+        check("desc","La descripcion debe ser mayor a 15 caracteres").isLength({min: 15,}),
+        check("teacher","Este no es un correo válido").isEmail(),
+        validateCampus
+        //check("teacher").custom(teacherValid),
     ], coursePost); 
  
 module.exports = router;

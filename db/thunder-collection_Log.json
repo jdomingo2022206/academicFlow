@@ -1,20 +1,20 @@
 {
     "client": "Thunder Client",
     "collectionName": "Log",
-    "dateExported": "2024-02-12T17:51:03.911Z",
+    "dateExported": "2024-02-15T01:51:04.209Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "7b969f3f-abbb-4ec7-b9db-1715b2215efd",
-            "colId": "3f7526f9-afc4-40e4-b6c4-6e129df6e626",
+            "_id": "3d174e0e-77f8-442c-b8e3-0e7316dff507",
+            "colId": "c0245396-a55c-4867-952d-dae65d6e9709",
             "containerId": "",
             "name": "logGet",
             "url": "http://localhost:10433/academic/log?email=test10@kinal.edu.gt&pass=$2a$10$N7WbKvAUDGqSrHTUEIYnn.yx8ap2UPDLhUCJqBbY4aSSe/Vj5H6ve",
             "method": "GET",
             "sortNum": 10000,
-            "created": "2024-02-12T16:14:48.262Z",
-            "modified": "2024-02-12T16:37:54.411Z",
+            "created": "2024-02-13T01:43:18.207Z",
+            "modified": "2024-02-13T01:43:18.207Z",
             "headers": [],
             "params": [
                 {
@@ -31,15 +31,15 @@
             "tests": []
         },
         {
-            "_id": "9c617bfb-b200-429d-9c5e-7ad8098ce052",
-            "colId": "3f7526f9-afc4-40e4-b6c4-6e129df6e626",
+            "_id": "8ffa3de6-bf28-4666-ad12-7bee6626d02b",
+            "colId": "c0245396-a55c-4867-952d-dae65d6e9709",
             "containerId": "",
             "name": "logCrypGet",
             "url": "http://localhost:10433/academic/log/cryp",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2024-02-12T16:14:48.264Z",
-            "modified": "2024-02-12T16:38:26.366Z",
+            "created": "2024-02-13T01:43:18.208Z",
+            "modified": "2024-02-13T01:43:18.208Z",
             "headers": [],
             "params": [],
             "body": {
