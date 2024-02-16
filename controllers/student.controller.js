@@ -1,7 +1,8 @@
 const User = require('../models/user');
 const Course = require('../models/course');
 const { existUserByEmail, existCourseByName, existStudentByEmail } = require('../helpers/db-validators');
-studentToCourse = async (req, res) => {
+
+addMeCourse = async (req, res) => {
     const { studentMail, courseName } = req.body;
     try {
         const studentInfo = await existUserByEmail(studentMail);
