@@ -68,7 +68,44 @@ const existUserByEmail  = async (correo='') => {
     }
 }
 
+const existCourseByName  = async (name='') => {
+    try {
+        const course = await Course.findOne({name});
+        if (course) {
+            return {
+                id: course._id,
+                name: course.name,
+                desc: course.desc,
+                teacherName: course.teacherName,
+                teacherMail: course.teacherMail,
+                status: course.estado
+            };
+        } else {
+            throw new Error(`El curso ${ name } no existe en base de datos.` )
+            return null; 
+        }
+    } catch (error) {
+        console.error('Error al buscar curso por nombre:', error);
+        throw error; 
+    }
+}
 
+const existStudentByEmail  = async (correo='') => {
+    try {
+        const user = await User.findOne({correo});
+        if (user) {
+            return {
+                user
+            };
+        } else {
+            throw new Error(`El estudiante ${ correo } no existe en base de datos.` )
+            return null; 
+        }
+    } catch (error) {
+        console.error('Error al buscar estudiante por correo electrónico:', error);
+        throw error; 
+    }
+}
 module.exports = {
     existentEmail,
     existentUserById,
@@ -76,5 +113,7 @@ module.exports = {
     existentCourseById,
     existentCourse,
     existUserByEmail,
-    teacherValid
+    teacherValid,
+    existCourseByName,
+    existStudentByEmail
 }
