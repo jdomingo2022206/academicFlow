@@ -43,10 +43,8 @@ const usersLogB = async (req, res = response ) => {
 
 const login = async (req, res) => {
     const { mail, password} = req.body;
-    console.log(mail,password);
     try{
-        const user = await User.findOne({ mail });
-        console.log(user)
+        const user = await User.findOne({ correo: mail });
         if(!user){
             return res.status(400).json({
                 msg: 'El correo no está registrado'
