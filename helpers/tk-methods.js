@@ -3,14 +3,14 @@ const User = require('../models/user');
 
 isToken = async (req, res) => {
     const token = req.headers['x-access-token'] ;
-    const user = this.verifyToken(token, res);
+    if (!token) {
+        return res.status(403).json({ msg: 'No se proporcionó un token.' });
+    }
+    const user = await verifyToken(token, res);
     return user;
 }
 
 verifyToken = async (token, res) => {
-    if (!token) {
-        return res.status(403).json({ msg: 'No se proporcionó un token.' });
-    }
     try {
         const decoded = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
         if (decoded.exp <= Math.floor(Date.now() / 1000)) {
