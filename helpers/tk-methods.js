@@ -13,15 +13,16 @@ isToken = async (req, res) => {
 verifyToken = async (token, res) => {
     try {
         const decoded = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
-        if (decoded.exp <= Math.floor(Date.now() / 1000)) {
-            return res.status(401).json({ msg: 'El token ha expirado.' });
-        }
         const user = await Usuario.findOne({_id: decoded.id});
         if (!user) {return res.status(404).json({ msg: 'El usuario no existe.' });}
         if (!user.estado) {return res.status(400).json({ msg: 'El usuario no está activo.'});}
         return user;
     } catch (error) {
-        return res.status(401).json({ msg: 'No autorizado.' });
+        if (error.name === 'TokenExpiredError') {
+            return res.status(401).json({ msg: 'El token ha expirado, porfavor vuelve a iniciar sesion.' });
+        }else{
+            return res.status(401).json({ msg: 'Token no válido.' });
+        }
     }
 
 }
