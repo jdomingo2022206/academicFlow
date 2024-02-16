@@ -4,7 +4,9 @@
   "description": "Proyecto de flow académico con Profesores, Alumnos, Cursos, Login y Validaciones.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "Jonathan Domingo",
@@ -15,7 +17,11 @@
     "dotenv": "^16.4.3",
     "express": "^4.18.2",
     "express-validator": "^7.0.1",
+    "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.3.0",
     "mongoose": "^8.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
   }
 }

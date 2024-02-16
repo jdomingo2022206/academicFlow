@@ -1,0 +1,49 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "student",
+    "dateExported": "2024-02-16T15:10:29.963Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "fcf2f589-cdec-4d7c-9f58-4c99ac78c772",
+            "colId": "ad268604-63d4-4ba8-8239-20465e858bde",
+            "containerId": "",
+            "name": "addMeCourse",
+            "url": "",
+            "method": "PUT",
+            "sortNum": 10000,
+            "created": "2024-02-16T15:00:20.016Z",
+            "modified": "2024-02-16T15:06:05.864Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "09a5adbf-f46d-4e14-99a8-6d11677bb32c",
+            "colId": "ad268604-63d4-4ba8-8239-20465e858bde",
+            "containerId": "",
+            "name": "myCourses",
+            "url": "",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-02-16T15:00:32.991Z",
+            "modified": "2024-02-16T15:00:32.991Z",
+            "headers": []
+        },
+        {
+            "_id": "5bbea020-dda1-4cd4-b412-e1ba2686e293",
+            "colId": "ad268604-63d4-4ba8-8239-20465e858bde",
+            "containerId": "",
+            "name": "outMeCourse",
+            "url": "",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-02-16T15:00:53.902Z",
+            "modified": "2024-02-16T15:06:10.496Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
