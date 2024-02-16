@@ -1,6 +1,17 @@
 const User = require('../models/user');
 const Course = require('../models/course');
 const { existUserByEmail, existCourseByName, existStudentByEmail } = require('../helpers/db-validators');
+const {verifyToken} = require('../helpers/tk-methods');
+const { verify } = require('crypto');
+const jwt = require('jsonwebtoken');
+
+verifyToken = async (req, res, next) => {
+    const token = req.headers['x-access-token'] ;
+    const user = verifyToken(token);
+    if (!user.role === 'STUDENT_ROLE') {
+        return res.status(403).json({ msg: 'No estas autorizado.' });
+    }
+}
 
 addMeCourse = async (req, res) => {
     const { studentMail, courseName } = req.body;
