@@ -42,38 +42,36 @@ const usersLogB = async (req, res = response ) => {
 }
 
 const login = async (req, res) => {
-    const { correo, password} = req.body;
-
+    const { mail, password} = req.body;
+    console.log(mail,password);
     try{
-        // verificar que el correo exista
-        const usuario = await Usuario.findOne({ correo });
-
-        console.log(usuario)
-        if(!usuario){
+        const user = await User.findOne({ mail });
+        console.log(user)
+        if(!user){
             return res.status(400).json({
                 msg: 'El correo no está registrado'
             })
         }
 
-        // verificar si el usuario está activo
-        if(!usuario.estado){
+        // verificar si el user está activo
+        if(!user.estado){
             return res.status(400).json({
-                msg: 'El usuario no existe en la base de datos'
+                msg: 'El user no existe en la base de datos'
             })
         }
         // verificar que la contraseña sea la correcta
-        const validPassword = bycriptjs.compareSync(password, usuario.password);
+        const validPassword = bycriptjs.compareSync(password, user.password);
         if(!validPassword){
             return res.status(400).json({
                 msg: 'Contraseña incorrecta'
             })
         }
 
-        const token = await generarteJWT(usuario.id);
+        const token = await generarteJWT(user.id);
 
         res.status(200).json({
             msg: 'Login ok',
-            usuario,
+            user,
             token
         });
 
