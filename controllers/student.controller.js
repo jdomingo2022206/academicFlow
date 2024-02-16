@@ -1,19 +1,13 @@
 const User = require('../models/user');
 const Course = require('../models/course');
 const { existUserByEmail, existCourseByName, existStudentByEmail } = require('../helpers/db-validators');
-const {verifyToken} = require('../helpers/tk-methods');
-const { verify } = require('crypto');
-const jwt = require('jsonwebtoken');
+const {isToken} = require('../helpers/tk-methods');
 
-verifyToken = async (req, res, next) => {
-    const token = req.headers['x-access-token'] ;
-    const user = verifyToken(token);
+addMeCourse = async (req, res) => {
+    const user = isToken(req, res);
     if (!user.role === 'STUDENT_ROLE') {
         return res.status(403).json({ msg: 'No estas autorizado.' });
     }
-}
-
-addMeCourse = async (req, res) => {
     const { studentMail, courseName } = req.body;
     try {
         const studentInfo = await existUserByEmail(studentMail);
@@ -45,8 +39,6 @@ addMeCourse = async (req, res) => {
         res.status(500).json({ msg: 'Hubo un error al agregar estudiante al curso.' });
         throw new Error(e);
     }
-
-
 }
 
 const coursePut = async (req, res) => {
