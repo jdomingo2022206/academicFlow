@@ -3,6 +3,7 @@ const Course = require('../models/course');
 const { existUserByEmail, existCourseByName, existStudentByEmail } = require('../helpers/db-validators');
 const {isToken} = require('../helpers/tk-methods');
 
+
 const addMeCourse = async (req, res) => {
     try {
         const { courseName } = req.body;
@@ -20,10 +21,7 @@ const addMeCourse = async (req, res) => {
             role: user.role,
             status: user.estado
         };
-        console.log('estado del curso prev:'+course.estado);
-        console.log("id de usuario", newUserObject.id.toString());
-        const uid = newUserObject.id.toString();
-        console.log("id de usuario UID", uid);
+
         if (!course) {
             return res.status(400).json({ msg: `El curso ${courseName} no existe en la base de datos.`});
         } else if (course.estado !== true) {
@@ -74,8 +72,6 @@ const outMeCourse = async (req, res) => {
             role: user.role,
             status: user.estado
         };
-        console.log('estado del curso prev:'+course.estado);
-        console.log("id de usuario", newUserObject.id.toString());
         
         if (!course) {
             return res.status(400).json({ msg: `El curso ${courseName} no existe en la base de datos.`});
@@ -84,8 +80,8 @@ const outMeCourse = async (req, res) => {
         } else if (!course.students.includes(newUserObject.id)) {
             return res.status(400).json({  msg: `El estudiante ${newUserObject.name} || ${newUserObject.mail} no está inscrito en el curso ${course.name}.` });
         }
-
-        course.students = course.students.filter( student => student !== newUserObject.id);
+        
+        course.students = course.students.filter(student => String(student) !== String(newUserObject.id));
         await course.save();
 
         return res.status(200).json({ msg: `El estudiante ${newUserObject.name} || ${newUserObject.mail} ha sido eliminado del curso ${course.name}.` });
