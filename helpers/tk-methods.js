@@ -13,7 +13,7 @@ isToken = async (req, res) => {
 verifyToken = async (token, res) => {
     try {
         const decoded = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
-        const user = await Usuario.findOne({_id: decoded.id});
+        const user = await User.findOne({_id: decoded.uid});
         if (!user) {return res.status(404).json({ msg: 'El usuario no existe.' });
         } else if (!user.estado) {return res.status(400).json({ msg: 'El usuario no está activo.'});}
         return user;

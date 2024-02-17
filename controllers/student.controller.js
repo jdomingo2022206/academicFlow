@@ -3,74 +3,102 @@ const Course = require('../models/course');
 const { existUserByEmail, existCourseByName, existStudentByEmail } = require('../helpers/db-validators');
 const {isToken} = require('../helpers/tk-methods');
 
-addMeCourse = async (req, res) => {
+const addMeCourse = async (req, res) => {
     try {
         const { courseName } = req.body;
         const user = await isToken(req, res);
-        const courseInfo = await existCourseByName(courseName);
+        const course = await existCourseByName(courseName);
+        
         if (user.role !== 'STUDENT_ROLE') {
             return res.status(403).json({ msg: 'No estas autorizado.' });
         }
         
         const newUserObject = {
-            nombre: user.nombre,
-            correo: user.correo,
+            id: user._id,
+            name: user.nombre,
+            mail: user.correo,
             role: user.role,
-            estado: user.estado
+            status: user.estado
         };
-    
-        if (!courseInfo) {
+        console.log('estado del curso prev:'+course.estado);
+        console.log("id de usuario", newUserObject.id.toString());
+        const uid = newUserObject.id.toString();
+        console.log("id de usuario UID", uid);
+        if (!course) {
             return res.status(400).json({ msg: `El curso ${courseName} no existe en la base de datos.`});
-        } else if (!courseInfo.status === true) {
-            return res.status(400).json({ msg: `El curso ${courseInfo.name} no está activo.`});
-        } else if (course.students.includes(newUserObject._id)) {
-            return res.status(400).json({  msg: `El estudiante ${studentInfo.name} || ${studentInfo.email} ya está inscrito en el curso ${courseInfo.name}.` });
-        } else if (courseInfo.students.length >= 10) {
-            return res.status(400).json({ msg: `El curso ${courseInfo.name} ya tiene el máximo de estudiantes.`});
+        } else if (course.estado !== true) {
+            return res.status(400).json({ msg: `El curso ${course.name} no está activo.`});
+        } else if (course.students.includes(newUserObject.id.toString())) {
+            return res.status(400).json({  msg: `El estudiante ${newUserObject.name} || ${newUserObject.mail} ya está inscrito en el curso ${course.name}.` });
+        } else if (course.students.length >= 10) {
+            return res.status(400).json({ msg: `El curso ${course.name} ya tiene el máximo de estudiantes.`});
         };
 
-        courseInfo.students.push(newUserObject._id);
-        await courseInfo.save();
+        course.students.push(newUserObject.id);
+        await course.save();
 
+        return res.status(200).json({ msg: `El estudiante ${newUserObject.name} || ${newUserObject.mail} ha sido agregado al curso ${course.name}.` });
+        
     } catch (e) {
         res.status(500).json({ msg: 'Hubo un error al agregar estudiante al curso.' });
         throw new Error(e);
     }
 }
 
-const coursePut = async (req, res) => {
-    const { teacher: newTeacherEmail, ...resto } = req.body;
-
+const myCourses = async (req, res) => {
     try {
-        const newTeacherInfo = await existUserByEmail(newTeacherEmail);
-        if (!newTeacherInfo) {
-            return res.status(400).json({ msg: `El profesor ${newTeacherEmail} no existe en la base de datos.`});
-        }
-        if (!newTeacherInfo.status === true) {
-            return res.status(400).json({ msg: `El profesor ${newTeacherInfo.name} || ${newTeacherInfo.email} no está activo.`});
-        }
-        const updatedFields = {
-            ...resto,
-            teacherId: newTeacherInfo.id,
-            teacherName: newTeacherInfo.name,
-            teacherMail: newTeacherInfo.email
-        };
-
-        await Course.findByIdAndUpdate(id, updatedFields);
-
-        const updatedCourse = await Course.findOne({ _id: id });
-
-        res.status(200).json({
-            msg: 'Curso actualizado exitosamente',
-            course: updatedCourse
-        });
-    } catch (error) {
-        console.error('Error al actualizar el curso:', error);
-        res.status(500).json({ msg: 'Hubo un error al actualizar el curso.' });
+        const user = await isToken(req, res);
+        const courses = await Course.find({students: user._id});
+        res.status(200).json({ courses });
+    } catch (e) {
+        res.status(500).json({ msg: 'Hubo un error al obtener los cursos del estudiante.' });
         throw new Error(e);
     }
+
+}
+
+const outMeCourse = async (req, res) => {
+    try {
+        const { courseName } = req.body;
+        const user = await isToken(req, res);
+        const course = await existCourseByName(courseName);
+        
+        if (user.role !== 'STUDENT_ROLE') {
+            return res.status(403).json({ msg: 'No estas autorizado.' });
+        }
+        
+        const newUserObject = {
+            id: user._id,
+            name: user.nombre,
+            mail: user.correo,
+            role: user.role,
+            status: user.estado
+        };
+        console.log('estado del curso prev:'+course.estado);
+        console.log("id de usuario", newUserObject.id.toString());
+        
+        if (!course) {
+            return res.status(400).json({ msg: `El curso ${courseName} no existe en la base de datos.`});
+        } else if (course.estado !== true) {
+            return res.status(400).json({ msg: `El curso ${course.name} no está activo.`});
+        } else if (!course.students.includes(newUserObject.id)) {
+            return res.status(400).json({  msg: `El estudiante ${newUserObject.name} || ${newUserObject.mail} no está inscrito en el curso ${course.name}.` });
+        }
+
+        course.students = course.students.filter( student => student !== newUserObject.id);
+        await course.save();
+
+        return res.status(200).json({ msg: `El estudiante ${newUserObject.name} || ${newUserObject.mail} ha sido eliminado del curso ${course.name}.` });
+        
+    } catch (e) {
+        res.status(500).json({ msg: 'Hubo un error al eliminar estudiante del curso.' });
+        throw new Error(e);
+    }
+
 }
 
 module.exports = {
-    addMeCourse
+    addMeCourse,
+    myCourses,
+    outMeCourse
 }

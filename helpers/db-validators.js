@@ -74,14 +74,7 @@ const existCourseByName  = async (name='') => {
     try {
         const course = await Course.findOne({name});
         if (course) {
-            return {
-                id: course._id,
-                name: course.name,
-                desc: course.desc,
-                teacherName: course.teacherName,
-                teacherMail: course.teacherMail,
-                status: course.estado
-            };
+            return course;
         } else {
             console.log(`El curso ${ name } no existe en base de datos.` )
             //throw new Error(`El curso ${ name } no existe en base de datos.` )
