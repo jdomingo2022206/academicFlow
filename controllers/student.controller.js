@@ -4,37 +4,34 @@ const { existUserByEmail, existCourseByName, existStudentByEmail } = require('..
 const {isToken} = require('../helpers/tk-methods');
 
 addMeCourse = async (req, res) => {
-    const user = isToken(req, res);
-    if (!user.role === 'STUDENT_ROLE') {
-        return res.status(403).json({ msg: 'No estas autorizado.' });
-    }
-    const { studentMail, courseName } = req.body;
     try {
-        const studentInfo = await existUserByEmail(studentMail);
-        const studentObj = await existStudentByEmail(studentMail);
+        const { courseName } = req.body;
+        const user = await isToken(req, res);
         const courseInfo = await existCourseByName(courseName);
-        if (studentInfo&&studentObj) {
-            /*if (!studentInfo) {
-                return res.status(400).json({ msg: `El estudiante ${studentMail} no existe en la base de datos.`});
-            }*/
-            if (!studentInfo.status === true) {
-                return res.status(400).json({ msg: `El estudiante ${studentInfo.name} || ${studentInfo.email} no está activo.`});
-            }    
-        } else {
-            return res.status(400).json({ msg: `El estudiante ${studentMail} no existe en la base de datos.`});
+        if (user.role !== 'STUDENT_ROLE') {
+            return res.status(403).json({ msg: 'No estas autorizado.' });
         }
         
+        const newUserObject = {
+            nombre: user.nombre,
+            correo: user.correo,
+            role: user.role,
+            estado: user.estado
+        };
+    
         if (!courseInfo) {
             return res.status(400).json({ msg: `El curso ${courseName} no existe en la base de datos.`});
-        }
-        if (!courseInfo.status === true) {
+        } else if (!courseInfo.status === true) {
             return res.status(400).json({ msg: `El curso ${courseInfo.name} no está activo.`});
-        }
-        const studentInCourse = courseInfo.students.find(student => student.toString() === studentInfo.id.toString());
-        if (studentInCourse) {
-            return res.status(400).json({ msg: `El estudiante ${studentInfo.name} || ${studentInfo.email} ya está inscrito en el curso ${courseInfo.name}.`});
-        }
-        courseInfo.students.push(studentObj);
+        } else if (course.students.includes(newUserObject._id)) {
+            return res.status(400).json({  msg: `El estudiante ${studentInfo.name} || ${studentInfo.email} ya está inscrito en el curso ${courseInfo.name}.` });
+        } else if (courseInfo.students.length >= 10) {
+            return res.status(400).json({ msg: `El curso ${courseInfo.name} ya tiene el máximo de estudiantes.`});
+        };
+
+        courseInfo.students.push(newUserObject._id);
+        await courseInfo.save();
+
     } catch (e) {
         res.status(500).json({ msg: 'Hubo un error al agregar estudiante al curso.' });
         throw new Error(e);

@@ -59,11 +59,13 @@ const existUserByEmail  = async (correo='') => {
                 status: user.estado
             };
         } else {
-            throw new Error(`El user ${ correo } no existe en base de datos.` )
+            console.log(`El user ${ correo } no existe en base de datos.` );
+            //throw new Error(`El user ${ correo } no existe en base de datos.` );
             return null; 
         }
     } catch (error) {
-        console.error('Error al buscar usuario por correo electrónico:', error);
+        console.log('Error al buscar usuario por correo electrónico:', error);
+        //console.error('Error al buscar usuario por correo electrónico:', error);
         throw error; 
     }
 }
@@ -81,12 +83,14 @@ const existCourseByName  = async (name='') => {
                 status: course.estado
             };
         } else {
-            throw new Error(`El curso ${ name } no existe en base de datos.` )
+            console.log(`El curso ${ name } no existe en base de datos.` )
+            //throw new Error(`El curso ${ name } no existe en base de datos.` )
             return null; 
         }
     } catch (error) {
-        console.error('Error al buscar curso por nombre:', error);
-        throw error; 
+        console.log('Error al buscar curso por nombre:', error);
+        //console.error('Error al buscar curso por nombre:', error);
+        //throw error; 
     }
 }
 
@@ -98,12 +102,14 @@ const existStudentByEmail  = async (correo='') => {
                 user
             };
         } else {
-            throw new Error(`El estudiante ${ correo } no existe en base de datos.` )
+            console.log(`El estudiante ${ correo } no existe en base de datos.` )
+            //throw new Error(`El estudiante ${ correo } no existe en base de datos.` )
             return null; 
         }
     } catch (error) {
-        console.error('Error al buscar estudiante por correo electrónico:', error);
-        throw error; 
+        console.log('Error al buscar estudiante por correo electrónico:', error);
+        //console.error('Error al buscar estudiante por correo electrónico:', error);
+        //throw error; 
     }
 }
 module.exports = {
