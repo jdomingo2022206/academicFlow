@@ -1,10 +1,29 @@
 {
     "client": "Thunder Client",
     "collectionName": "Student",
-    "dateExported": "2024-02-17T15:10:22.178Z",
+    "dateExported": "2024-02-17T15:31:13.097Z",
     "version": "1.1",
     "folders": [],
     "requests": [
+        {
+            "_id": "304c1ffe-b9ac-4c47-bfeb-34f212731f98",
+            "colId": "ad268604-63d4-4ba8-8239-20465e858bde",
+            "containerId": "",
+            "name": "studentPost Copy",
+            "url": "http://localhost:10433/academic/user",
+            "method": "POST",
+            "sortNum": 5000,
+            "created": "2024-02-17T15:30:17.663Z",
+            "modified": "2024-02-17T15:30:17.663Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"student 1\",\n  \"correo\":\"student_1@kinal.edu.gt\",\n  \"password\":\"student 1\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
         {
             "_id": "fcf2f589-cdec-4d7c-9f58-4c99ac78c772",
             "colId": "ad268604-63d4-4ba8-8239-20465e858bde",

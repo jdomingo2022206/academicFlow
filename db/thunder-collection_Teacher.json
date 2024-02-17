@@ -1,0 +1,28 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Teacher",
+    "dateExported": "2024-02-17T15:31:19.581Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "1d83486b-7893-4595-b513-e8ba27d28fa1",
+            "colId": "304270f6-6eb0-4da4-ab7c-0576adcfbde5",
+            "containerId": "",
+            "name": "teacherPost Copy",
+            "url": "http://localhost:10433/academic/user/teacher",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-17T15:30:49.735Z",
+            "modified": "2024-02-17T15:30:49.735Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"Braulio Echeverria\",\n  \"correo\":\"becheverria@kinal.edu.gt\",\n  \"password\":\"brauilio\"\n  \n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
