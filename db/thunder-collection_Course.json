@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Course",
-    "dateExported": "2024-02-15T01:51:10.678Z",
+    "dateExported": "2024-02-17T15:09:23.162Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,12 +14,12 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-02-13T01:43:18.191Z",
-            "modified": "2024-02-15T01:32:13.452Z",
+            "modified": "2024-02-17T15:04:01.518Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\": \"Biotecno III\", \n  \"desc\": \"Curso de biotecno a full todos los dias\",\n  \"teacher\": \"becheverria@kinal.edu.gt\"\n}",
+                "raw": "{\n  \"name\": \"Etica\", \n  \"desc\": \"Curso de Etica a full todos los dias\",\n  \"teacher\": \"becheverria@kinal.edu.gt\"\n}",
                 "form": []
             },
             "tests": []

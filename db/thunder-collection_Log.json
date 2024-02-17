@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Log",
-    "dateExported": "2024-02-15T01:51:04.209Z",
+    "dateExported": "2024-02-17T15:09:45.355Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -45,6 +45,25 @@
             "body": {
                 "type": "json",
                 "raw": "{\n  \"correo\" : \"test10@kinal.edu.gt\",\n  \"password\" : \"$2a$10$N7WbKvAUDGqSrHTUEIYnn.yx8ap2UPDLhUCJqBbY4aSSe/Vj5H6ve\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "99e90ddb-b6bc-4fd6-ba62-a73379d1d83f",
+            "colId": "c0245396-a55c-4867-952d-dae65d6e9709",
+            "containerId": "",
+            "name": "login",
+            "url": "http://localhost:10433/academic/log/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-02-16T16:20:10.037Z",
+            "modified": "2024-02-16T21:41:49.413Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"mail\":\"student_1@kinal.edu.gt\",\n  \"password\":\"student 1\"\n}",
                 "form": []
             },
             "tests": []

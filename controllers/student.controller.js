@@ -8,12 +8,20 @@ const addMeCourse = async (req, res) => {
     try {
         const { courseName } = req.body;
         const user = await isToken(req, res);
+        if (!user){
+            return;
+        }
         const course = await existCourseByName(courseName);
         
         if (user.role !== 'STUDENT_ROLE') {
             return res.status(403).json({ msg: 'No estas autorizado.' });
         }
         
+        const coursesCount = await Course.countDocuments({ students: user._id });
+        if (coursesCount >= 3) {
+            return res.status(400).json({ msg: 'Ya estás inscrito en el máximo número de cursos.' });
+        }
+
         const newUserObject = {
             id: user._id,
             name: user.nombre,
