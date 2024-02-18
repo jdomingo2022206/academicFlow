@@ -29,10 +29,10 @@ const createMyCourse = async (req, res) => {
 const myCourses = async (req, res) => {
     try {
         const user = await isToken(req, res);
-        const courses = await Course.find({students: user._id});
+        const courses = await Course.find({teacherId: user._id});
         res.status(200).json({ courses });
     } catch (e) {
-        res.status(500).json({ msg: 'Hubo un error al obtener los cursos del estudiante.' });
+        res.status(500).json({ msg: 'Hubo un error al obtener los cursos del profesor.' });
         throw new Error(e);
     }
 
@@ -44,36 +44,23 @@ const deleteMeCourse = async (req, res) => {
         const user = await isToken(req, res);
         const course = await existCourseByName(courseName);
         
-        if (user.role !== 'STUDENT_ROLE') {
+        if (user.role !== 'TEACHER_ROLE') {
             return res.status(403).json({ msg: 'No estas autorizado.' });
         }
         
-        const newUserObject = {
-            id: user._id,
-            name: user.nombre,
-            mail: user.correo,
-            role: user.role,
-            status: user.estado
-        };
-        
         if (!course) {
             return res.status(400).json({ msg: `El curso ${courseName} no existe en la base de datos.`});
-        } else if (course.estado !== true) {
-            return res.status(400).json({ msg: `El curso ${course.name} no está activo.`});
-        } else if (!course.students.includes(newUserObject.id)) {
-            return res.status(400).json({  msg: `El estudiante ${newUserObject.name} || ${newUserObject.mail} no está inscrito en el curso ${course.name}.` });
+        } else if (course.teacherId !== user._id) {
+            return res.status(400).json({ msg: `El profesor ${user.nombre} || ${user.correo} no es el dueño del curso ${course.name}.`});
         }
         
-        course.students = course.students.filter(student => String(student) !== String(newUserObject.id));
+        course.estado = false;
         await course.save();
-
-        return res.status(200).json({ msg: `El estudiante ${newUserObject.name} || ${newUserObject.mail} ha sido eliminado del curso ${course.name}.` });
-        
+        res.status(200).json({ msg: `El curso ${course.name} ha sido eliminado.` });
     } catch (e) {
-        res.status(500).json({ msg: 'Hubo un error al eliminar estudiante del curso.' });
+        res.status(500).json({ msg: 'Hubo un error al eliminar el curso.' });
         throw new Error(e);
     }
-
 }
 
 module.exports = {
