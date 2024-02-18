@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Teacher",
-    "dateExported": "2024-02-18T05:57:54.845Z",
+    "dateExported": "2024-02-18T06:27:48.747Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -53,15 +53,15 @@
             "colId": "304270f6-6eb0-4da4-ab7c-0576adcfbde5",
             "containerId": "",
             "name": "myCourses",
-            "url": "http://localhost:10433/academic/academic/teacher/myCourses",
+            "url": "http://localhost:10433/academic/teacher/myCourses",
             "method": "GET",
             "sortNum": 30000,
             "created": "2024-02-18T05:51:16.593Z",
-            "modified": "2024-02-18T05:57:12.745Z",
+            "modified": "2024-02-18T06:03:34.057Z",
             "headers": [
                 {
                     "name": "x-access-token",
-                    "value": ""
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNkNjQyNmMwMjg2NmI5NzZhZjgyOTUiLCJpYXQiOjE3MDgyMzYwNjMsImV4cCI6MTcwODIzOTY2M30.rRQ23yszT2xP48CdBcTupihIqRe0x5LMw3GwaJB6AhY"
                 }
             ],
             "params": [],
@@ -72,15 +72,15 @@
             "colId": "304270f6-6eb0-4da4-ab7c-0576adcfbde5",
             "containerId": "",
             "name": "deleteMyCourse",
-            "url": "http://localhost:10433/academic/academic/teacher/deleteMeCourse",
+            "url": "http://localhost:10433/academic/teacher/deleteMeCourse",
             "method": "POST",
             "sortNum": 40000,
             "created": "2024-02-18T05:51:28.600Z",
-            "modified": "2024-02-18T05:57:17.249Z",
+            "modified": "2024-02-18T06:09:01.352Z",
             "headers": [
                 {
                     "name": "x-access-token",
-                    "value": ""
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNkNjQyNmMwMjg2NmI5NzZhZjgyOTUiLCJpYXQiOjE3MDgyMzYwNjMsImV4cCI6MTcwODIzOTY2M30.rRQ23yszT2xP48CdBcTupihIqRe0x5LMw3GwaJB6AhY"
                 }
             ],
             "params": [],
@@ -92,25 +92,25 @@
             "tests": []
         },
         {
-            "_id": "2408548a-9503-43ce-9f30-cdba6c5a0153",
+            "_id": "43933793-3427-4739-867d-9dc804b69026",
             "colId": "304270f6-6eb0-4da4-ab7c-0576adcfbde5",
             "containerId": "",
-            "name": "editMyProfile",
-            "url": "http://localhost:10433/academic/academic/teacher/editMyProfile",
+            "name": "editMyProfile Copy Copy",
+            "url": "http://localhost:10433/academic/user/editMyProfile",
             "method": "PUT",
             "sortNum": 50000,
-            "created": "2024-02-18T05:51:42.776Z",
-            "modified": "2024-02-18T05:57:20.589Z",
+            "created": "2024-02-18T06:19:58.904Z",
+            "modified": "2024-02-18T06:21:20.378Z",
             "headers": [
                 {
                     "name": "x-access-token",
-                    "value": ""
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNkNjQyNmMwMjg2NmI5NzZhZjgyOTUiLCJpYXQiOjE3MDgyMzYwNjMsImV4cCI6MTcwODIzOTY2M30.rRQ23yszT2xP48CdBcTupihIqRe0x5LMw3GwaJB6AhY"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\":\"Paquita la del barrio\"\n}",
+                "raw": "{\n  \"nombre\":\"Braulio Echeverria\",\n  \"estado\": true\n}",
                 "form": []
             },
             "tests": []

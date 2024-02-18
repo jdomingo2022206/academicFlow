@@ -54,7 +54,7 @@ const addMeCourse = async (req, res) => {
 const myCourses = async (req, res) => {
     try {
         const user = await isToken(req, res);
-        const courses = await Course.find({students: user._id});
+        const courses = await Course.find({students: user._id, estado: true});
         res.status(200).json({ courses });
     } catch (e) {
         res.status(500).json({ msg: 'Hubo un error al obtener los cursos del estudiante.' });

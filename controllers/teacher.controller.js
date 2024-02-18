@@ -48,9 +48,11 @@ const deleteMeCourse = async (req, res) => {
             return res.status(403).json({ msg: 'No estas autorizado.' });
         }
         
+        console.log("Id de los teacher course: "+course.teacherId.toString());
+        console.log("Id de los teacher usersd: "+user._id);
         if (!course) {
             return res.status(400).json({ msg: `El curso ${courseName} no existe en la base de datos.`});
-        } else if (course.teacherId !== user._id) {
+        } else if (course.teacherId.toString() === user._id) {
             return res.status(400).json({ msg: `El profesor ${user.nombre} || ${user.correo} no es el dueño del curso ${course.name}.`});
         }
         
@@ -68,9 +70,9 @@ const editMyProfile = async (req, res) => {
         const user = await isToken(req, res);
         const { _id, correo,role,estado,  ...resto} = req.body;
         await User.findByIdAndUpdate(user._id, resto);
-        const usuario = await User.findOne({_id: id});
+        const usuario = await User.findOne({_id: user.id});
 
-        res.status(200).json({ msg: `Tu perfil se a actualizado exitosamente. ANTES: `+ user + `DESPUES` + usuario})
+        res.status(200).json({ msg: "Tu perfil se a actualizado exitosamente: ", usuario})
         
         
     }catch (e) {

@@ -2,10 +2,12 @@ const { Router } = require('express');
 const { check } = require('express-validator');
 const { validateCampus } = require('../middlewares/validate-campus');
 const { existentEmail, existentUserById, roleValid} = require('../helpers/db-validators');
-const { userDelete, userPost, userTeacherPost, userGet, getUserByid, userPut } = require('../controllers/user.controller');
+const { userDelete, userPost, userTeacherPost, userGet, getUserByid, userPut, editMyProfile } = require('../controllers/user.controller');
 const router = Router();
 
 router.get("/", userGet);
+
+router.put('/editMyProfile', editMyProfile);
 
 router.get(
     "/:id",
@@ -51,5 +53,7 @@ router.post(
         check("correo").custom(existentEmail),
         validateCampus,
     ], userTeacherPost); 
+
+
 
 module.exports = router;

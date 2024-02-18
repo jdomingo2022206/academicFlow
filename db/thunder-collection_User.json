@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "User",
-    "dateExported": "2024-02-17T15:09:51.776Z",
+    "dateExported": "2024-02-18T06:28:00.714Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -102,6 +102,30 @@
             "modified": "2024-02-15T01:06:03.814Z",
             "headers": [],
             "params": [],
+            "tests": []
+        },
+        {
+            "_id": "96c189bb-2b17-4bee-abad-8a219d58ebd8",
+            "colId": "12ca205c-20ac-473f-8f55-6df9ce40274b",
+            "containerId": "",
+            "name": "editMyProfile Copy",
+            "url": "http://localhost:10433/academic/user/editMyProfile",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2024-02-18T06:13:58.495Z",
+            "modified": "2024-02-18T06:19:14.986Z",
+            "headers": [
+                {
+                    "name": "x-access-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNkNjQyNmMwMjg2NmI5NzZhZjgyOTUiLCJpYXQiOjE3MDgyMzYwNjMsImV4cCI6MTcwODIzOTY2M30.rRQ23yszT2xP48CdBcTupihIqRe0x5LMw3GwaJB6AhY"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"Braulio Echeverria\"\n}",
+                "form": []
+            },
             "tests": []
         }
     ]

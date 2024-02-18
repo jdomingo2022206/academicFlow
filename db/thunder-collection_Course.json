@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Course",
-    "dateExported": "2024-02-17T15:09:23.162Z",
+    "dateExported": "2024-02-18T06:28:13.242Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -76,11 +76,11 @@
             "colId": "c4bc6d5d-1494-440c-9d64-11fccedea0ee",
             "containerId": "",
             "name": "courseDelete",
-            "url": "http://localhost:10433/academic/course/65cd5e8c9d15eab7aa2dc781",
+            "url": "http://localhost:10433/academic/course/65d0caccb9fd5f6bebd3ef68",
             "method": "DELETE",
             "sortNum": 50000,
             "created": "2024-02-13T01:43:18.195Z",
-            "modified": "2024-02-15T00:58:14.549Z",
+            "modified": "2024-02-18T06:27:27.006Z",
             "headers": [],
             "params": [],
             "tests": []

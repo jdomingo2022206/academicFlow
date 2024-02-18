@@ -2,6 +2,7 @@ const { response, json } = require('express');
 const bcryptjs = require('bcryptjs');
 const Usuario = require('../models/user');
 const {isToken} = require('../helpers/tk-methods');
+const User = require('../models/user');
 
 const userGet = async (req, res = response ) => {
     const { limite, desde } = req.query;
@@ -83,6 +84,22 @@ const userTeacherPost = async (req, res) =>{
     });
 }
 
+const editMyProfile = async (req, res) => {
+    try {
+        const user = await isToken(req, res);
+        const { _id, correo,role,  ...resto} = req.body;
+        await User.findByIdAndUpdate(user._id, resto);
+        const usuario = await User.findOne({_id: user.id});
+
+        res.status(200).json({ msg: "Tu perfil se a actualizado exitosamente: ", usuario})
+        
+        
+    }catch (e) {
+        res.status(500).json({ msg: 'Hubo un error al editar el perfil.' });
+        throw new Error(e);
+    }
+}
+
 
 module.exports = {
     userDelete,
@@ -90,5 +107,6 @@ module.exports = {
     userTeacherPost,
     userGet,
     getUserByid,
-    userPut
+    userPut,
+    editMyProfile
 }

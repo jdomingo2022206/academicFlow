@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Student",
-    "dateExported": "2024-02-18T05:58:06.675Z",
+    "dateExported": "2024-02-18T06:27:55.047Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -57,11 +57,11 @@
             "method": "GET",
             "sortNum": 20000,
             "created": "2024-02-16T15:00:32.991Z",
-            "modified": "2024-02-17T15:02:10.431Z",
+            "modified": "2024-02-18T06:26:30.959Z",
             "headers": [
                 {
                     "name": "x-access-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNjNGY5NGFhNTZlYmZlZTdiZmYzNWUiLCJpYXQiOjE3MDgxODIwOTgsImV4cCI6MTcwODE4NTY5OH0.8nCc3xlmUN36EOkJ1l1QXJcKaadCktWm-yG5o7MSCws"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNjNGY5NGFhNTZlYmZlZTdiZmYzNWUiLCJpYXQiOjE3MDgyMzc1NjcsImV4cCI6MTcwODI0MTE2N30.oH2KtJF8gtX0UgQwbE_alyuM5i5mYXQVf6YbQg6pr3g"
                 }
             ],
             "params": [],
@@ -87,6 +87,30 @@
             "body": {
                 "type": "json",
                 "raw": "{\n  \"courseName\":\"Biotecno I\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "12d7d9fa-a61c-4cbb-b8cd-716e86061c52",
+            "colId": "ad268604-63d4-4ba8-8239-20465e858bde",
+            "containerId": "",
+            "name": "editMyProfile Copy Copy",
+            "url": "http://localhost:10433/academic/user/editMyProfile",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-02-18T06:19:48.082Z",
+            "modified": "2024-02-18T06:19:48.082Z",
+            "headers": [
+                {
+                    "name": "x-access-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNkNjQyNmMwMjg2NmI5NzZhZjgyOTUiLCJpYXQiOjE3MDgyMzYwNjMsImV4cCI6MTcwODIzOTY2M30.rRQ23yszT2xP48CdBcTupihIqRe0x5LMw3GwaJB6AhY"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"Braulio Echeverria\"\n}",
                 "form": []
             },
             "tests": []
