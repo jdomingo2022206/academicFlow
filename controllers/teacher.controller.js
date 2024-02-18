@@ -63,8 +63,25 @@ const deleteMeCourse = async (req, res) => {
     }
 }
 
+const editMyProfile = async (req, res) => {
+    try {
+        const user = await isToken(req, res);
+        const { _id, correo,role,estado,  ...resto} = req.body;
+        await User.findByIdAndUpdate(user._id, resto);
+        const usuario = await User.findOne({_id: id});
+
+        res.status(200).json({ msg: `Tu perfil se a actualizado exitosamente. ANTES: `+ user + `DESPUES` + usuario})
+        
+        
+    }catch (e) {
+        res.status(500).json({ msg: 'Hubo un error al editar el perfil.' });
+        throw new Error(e);
+    }
+}
+
 module.exports = {
     createMyCourse,
     myCourses,
-    deleteMeCourse
+    deleteMeCourse,
+    editMyProfile
 }

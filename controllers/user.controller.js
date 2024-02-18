@@ -1,6 +1,7 @@
 const { response, json } = require('express');
 const bcryptjs = require('bcryptjs');
 const Usuario = require('../models/user');
+const {isToken} = require('../helpers/tk-methods');
 
 const userGet = async (req, res = response ) => {
     const { limite, desde } = req.query;
@@ -81,6 +82,7 @@ const userTeacherPost = async (req, res) =>{
         usuario
     });
 }
+
 
 module.exports = {
     userDelete,
