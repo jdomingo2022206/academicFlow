@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Teacher",
-    "dateExported": "2024-02-17T15:31:19.581Z",
+    "dateExported": "2024-02-18T05:57:54.845Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -20,6 +20,97 @@
             "body": {
                 "type": "json",
                 "raw": "{\n  \"nombre\":\"Braulio Echeverria\",\n  \"correo\":\"becheverria@kinal.edu.gt\",\n  \"password\":\"brauilio\"\n  \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "63b6b2b9-add9-4794-a23f-8a20aea0d210",
+            "colId": "304270f6-6eb0-4da4-ab7c-0576adcfbde5",
+            "containerId": "",
+            "name": "createMyCourse",
+            "url": "http://localhost:10433/academic/academic/teacher/createMyCourse",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-02-18T05:50:49.895Z",
+            "modified": "2024-02-18T05:57:06.050Z",
+            "headers": [
+                {
+                    "name": "x-access-token",
+                    "value": ""
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"courseName\": \"Etica\", \n  \"desc\": \"Curso de Etica a full todos los dias\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "5492f449-3ac9-481e-87ee-e99438dd2a87",
+            "colId": "304270f6-6eb0-4da4-ab7c-0576adcfbde5",
+            "containerId": "",
+            "name": "myCourses",
+            "url": "http://localhost:10433/academic/academic/teacher/myCourses",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-02-18T05:51:16.593Z",
+            "modified": "2024-02-18T05:57:12.745Z",
+            "headers": [
+                {
+                    "name": "x-access-token",
+                    "value": ""
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "12272bf8-b660-4ac3-8f2c-3f4b8e6aebe3",
+            "colId": "304270f6-6eb0-4da4-ab7c-0576adcfbde5",
+            "containerId": "",
+            "name": "deleteMyCourse",
+            "url": "http://localhost:10433/academic/academic/teacher/deleteMeCourse",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-02-18T05:51:28.600Z",
+            "modified": "2024-02-18T05:57:17.249Z",
+            "headers": [
+                {
+                    "name": "x-access-token",
+                    "value": ""
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"courseName\": \"Etica\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "2408548a-9503-43ce-9f30-cdba6c5a0153",
+            "colId": "304270f6-6eb0-4da4-ab7c-0576adcfbde5",
+            "containerId": "",
+            "name": "editMyProfile",
+            "url": "http://localhost:10433/academic/academic/teacher/editMyProfile",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-02-18T05:51:42.776Z",
+            "modified": "2024-02-18T05:57:20.589Z",
+            "headers": [
+                {
+                    "name": "x-access-token",
+                    "value": ""
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"Paquita la del barrio\"\n}",
                 "form": []
             },
             "tests": []
