@@ -1,20 +1,20 @@
 {
     "client": "Thunder Client",
     "collectionName": "Student",
-    "dateExported": "2024-02-18T06:27:55.047Z",
+    "dateExported": "2024-02-23T17:48:43.535Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "304c1ffe-b9ac-4c47-bfeb-34f212731f98",
-            "colId": "ad268604-63d4-4ba8-8239-20465e858bde",
+            "_id": "076d9faa-dc38-4273-bfcc-d3f28b94b7e4",
+            "colId": "106ea302-86a4-4941-9829-f4cdf26ab3cc",
             "containerId": "",
             "name": "studentPost Copy",
             "url": "http://localhost:10433/academic/user",
             "method": "POST",
             "sortNum": 5000,
-            "created": "2024-02-17T15:30:17.663Z",
-            "modified": "2024-02-17T15:30:17.663Z",
+            "created": "2024-02-23T14:50:44.242Z",
+            "modified": "2024-02-23T14:50:44.242Z",
             "headers": [],
             "params": [],
             "body": {
@@ -25,19 +25,19 @@
             "tests": []
         },
         {
-            "_id": "fcf2f589-cdec-4d7c-9f58-4c99ac78c772",
-            "colId": "ad268604-63d4-4ba8-8239-20465e858bde",
+            "_id": "7edc9341-0363-4846-9c48-a15d8a652f23",
+            "colId": "106ea302-86a4-4941-9829-f4cdf26ab3cc",
             "containerId": "",
             "name": "addMeCourse",
             "url": "http://localhost:10433/academic/student/addMeCourse",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-02-16T15:00:20.016Z",
-            "modified": "2024-02-17T15:04:36.171Z",
+            "created": "2024-02-23T14:50:44.238Z",
+            "modified": "2024-02-23T16:07:40.327Z",
             "headers": [
                 {
                     "name": "x-access-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNjNGY5NGFhNTZlYmZlZTdiZmYzNWUiLCJpYXQiOjE3MDgxODIwOTgsImV4cCI6MTcwODE4NTY5OH0.8nCc3xlmUN36EOkJ1l1QXJcKaadCktWm-yG5o7MSCws"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNhNGNiZjdkMDJkNGY5NzhhZmY4ODIiLCJpYXQiOjE3MDg3MDQ0MzYsImV4cCI6MTcwODcwODAzNn0.IaSB5GX-O0x0gFtpg7sbLyy32itCbQPH9mVigIOc9UU"
                 }
             ],
             "params": [],
@@ -49,68 +49,68 @@
             "tests": []
         },
         {
-            "_id": "09a5adbf-f46d-4e14-99a8-6d11677bb32c",
-            "colId": "ad268604-63d4-4ba8-8239-20465e858bde",
+            "_id": "cabccbfd-66e2-42d5-9550-01332771fd7c",
+            "colId": "106ea302-86a4-4941-9829-f4cdf26ab3cc",
             "containerId": "",
             "name": "myCourses",
             "url": "http://localhost:10433/academic/student/myCourses",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2024-02-16T15:00:32.991Z",
-            "modified": "2024-02-18T06:26:30.959Z",
+            "created": "2024-02-23T14:50:44.239Z",
+            "modified": "2024-02-23T16:07:28.086Z",
             "headers": [
                 {
                     "name": "x-access-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNjNGY5NGFhNTZlYmZlZTdiZmYzNWUiLCJpYXQiOjE3MDgyMzc1NjcsImV4cCI6MTcwODI0MTE2N30.oH2KtJF8gtX0UgQwbE_alyuM5i5mYXQVf6YbQg6pr3g"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNhNGNiZjdkMDJkNGY5NzhhZmY4ODIiLCJpYXQiOjE3MDg3MDQ0MzYsImV4cCI6MTcwODcwODAzNn0.IaSB5GX-O0x0gFtpg7sbLyy32itCbQPH9mVigIOc9UU"
                 }
             ],
             "params": [],
             "tests": []
         },
         {
-            "_id": "5bbea020-dda1-4cd4-b412-e1ba2686e293",
-            "colId": "ad268604-63d4-4ba8-8239-20465e858bde",
+            "_id": "b61b0409-4411-4704-9343-18c4631671fd",
+            "colId": "106ea302-86a4-4941-9829-f4cdf26ab3cc",
             "containerId": "",
             "name": "outMeCourse",
             "url": "http://localhost:10433/academic/student/outMeCourse",
             "method": "POST",
             "sortNum": 30000,
-            "created": "2024-02-16T15:00:53.902Z",
-            "modified": "2024-02-17T06:43:28.455Z",
+            "created": "2024-02-23T14:50:44.240Z",
+            "modified": "2024-02-23T16:08:22.520Z",
             "headers": [
                 {
                     "name": "x-access-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNjNGY5NGFhNTZlYmZlZTdiZmYzNWUiLCJpYXQiOjE3MDgxNTA4MzEsImV4cCI6MTcwODE1NDQzMX0.LoX4nWY9go8oItRmsLZWwFzCdOulr-U1x0p3PYOqJyU"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNhNGNiZjdkMDJkNGY5NzhhZmY4ODIiLCJpYXQiOjE3MDg3MDQ0MzYsImV4cCI6MTcwODcwODAzNn0.IaSB5GX-O0x0gFtpg7sbLyy32itCbQPH9mVigIOc9UU"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"courseName\":\"Biotecno I\"\n}",
+                "raw": "{\n  \"courseName\":\"Etica\"\n}",
                 "form": []
             },
             "tests": []
         },
         {
-            "_id": "12d7d9fa-a61c-4cbb-b8cd-716e86061c52",
-            "colId": "ad268604-63d4-4ba8-8239-20465e858bde",
+            "_id": "53342728-b055-4c87-b277-87d16c678cc5",
+            "colId": "106ea302-86a4-4941-9829-f4cdf26ab3cc",
             "containerId": "",
             "name": "editMyProfile Copy Copy",
             "url": "http://localhost:10433/academic/user/editMyProfile",
             "method": "PUT",
             "sortNum": 40000,
-            "created": "2024-02-18T06:19:48.082Z",
-            "modified": "2024-02-18T06:19:48.082Z",
+            "created": "2024-02-23T14:50:44.243Z",
+            "modified": "2024-02-23T16:08:58.391Z",
             "headers": [
                 {
                     "name": "x-access-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNkNjQyNmMwMjg2NmI5NzZhZjgyOTUiLCJpYXQiOjE3MDgyMzYwNjMsImV4cCI6MTcwODIzOTY2M30.rRQ23yszT2xP48CdBcTupihIqRe0x5LMw3GwaJB6AhY"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNhNGNiZjdkMDJkNGY5NzhhZmY4ODIiLCJpYXQiOjE3MDg3MDQ0MzYsImV4cCI6MTcwODcwODAzNn0.IaSB5GX-O0x0gFtpg7sbLyy32itCbQPH9mVigIOc9UU"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\":\"Braulio Echeverria\"\n}",
+                "raw": "{\n  \"nombre\":\"student 1\"\n}",
                 "form": []
             },
             "tests": []

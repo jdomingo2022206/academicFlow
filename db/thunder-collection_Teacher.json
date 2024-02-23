@@ -1,86 +1,86 @@
 {
     "client": "Thunder Client",
     "collectionName": "Teacher",
-    "dateExported": "2024-02-18T06:27:48.747Z",
+    "dateExported": "2024-02-23T17:48:49.919Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "1d83486b-7893-4595-b513-e8ba27d28fa1",
-            "colId": "304270f6-6eb0-4da4-ab7c-0576adcfbde5",
+            "_id": "e472ec47-afb1-455d-a568-b85cd645b3e7",
+            "colId": "ba898024-c220-4b05-ac48-52ff94dac930",
             "containerId": "",
             "name": "teacherPost Copy",
             "url": "http://localhost:10433/academic/user/teacher",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-02-17T15:30:49.735Z",
-            "modified": "2024-02-17T15:30:49.735Z",
+            "created": "2024-02-23T14:50:44.264Z",
+            "modified": "2024-02-23T16:21:20.224Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\":\"Braulio Echeverria\",\n  \"correo\":\"becheverria@kinal.edu.gt\",\n  \"password\":\"brauilio\"\n  \n}",
+                "raw": "{\n  \"nombre\":\"Victor Alvarez\",\n  \"correo\":\"valvarez@kinal.edu.gt\",\n  \"password\":\"brauilio\"\n  \n}",
                 "form": []
             },
             "tests": []
         },
         {
-            "_id": "63b6b2b9-add9-4794-a23f-8a20aea0d210",
-            "colId": "304270f6-6eb0-4da4-ab7c-0576adcfbde5",
+            "_id": "0c696cbb-1fdf-40bd-bb02-5ef232e3a719",
+            "colId": "ba898024-c220-4b05-ac48-52ff94dac930",
             "containerId": "",
             "name": "createMyCourse",
-            "url": "http://localhost:10433/academic/academic/teacher/createMyCourse",
+            "url": "http://localhost:10433/academic/teacher/createMyCourse",
             "method": "POST",
             "sortNum": 20000,
-            "created": "2024-02-18T05:50:49.895Z",
-            "modified": "2024-02-18T05:57:06.050Z",
+            "created": "2024-02-23T14:50:44.265Z",
+            "modified": "2024-02-23T16:40:39.286Z",
             "headers": [
                 {
                     "name": "x-access-token",
-                    "value": ""
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4YzYwMDk1NTUwN2ZlZjc2MjQxNTIiLCJpYXQiOjE3MDg3MDUzMDcsImV4cCI6MTcwODcwODkwN30.7xc6sgdMRc3uPm5FSvXSEI5dd45mqkdJld2KnncM8_w"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"courseName\": \"Etica\", \n  \"desc\": \"Curso de Etica a full todos los dias\"\n}",
+                "raw": "{\n  \"courseName\": \"It\", \n  \"desc\": \"Curso de it a full todos los dias\"\n}",
                 "form": []
             },
             "tests": []
         },
         {
-            "_id": "5492f449-3ac9-481e-87ee-e99438dd2a87",
-            "colId": "304270f6-6eb0-4da4-ab7c-0576adcfbde5",
+            "_id": "e59ad38a-e28d-494e-a5a8-63cc9285bc48",
+            "colId": "ba898024-c220-4b05-ac48-52ff94dac930",
             "containerId": "",
             "name": "myCourses",
             "url": "http://localhost:10433/academic/teacher/myCourses",
             "method": "GET",
             "sortNum": 30000,
-            "created": "2024-02-18T05:51:16.593Z",
-            "modified": "2024-02-18T06:03:34.057Z",
+            "created": "2024-02-23T14:50:44.266Z",
+            "modified": "2024-02-23T16:41:03.616Z",
             "headers": [
                 {
                     "name": "x-access-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNkNjQyNmMwMjg2NmI5NzZhZjgyOTUiLCJpYXQiOjE3MDgyMzYwNjMsImV4cCI6MTcwODIzOTY2M30.rRQ23yszT2xP48CdBcTupihIqRe0x5LMw3GwaJB6AhY"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4YzYwMDk1NTUwN2ZlZjc2MjQxNTIiLCJpYXQiOjE3MDg3MDUzMDcsImV4cCI6MTcwODcwODkwN30.7xc6sgdMRc3uPm5FSvXSEI5dd45mqkdJld2KnncM8_w"
                 }
             ],
             "params": [],
             "tests": []
         },
         {
-            "_id": "12272bf8-b660-4ac3-8f2c-3f4b8e6aebe3",
-            "colId": "304270f6-6eb0-4da4-ab7c-0576adcfbde5",
+            "_id": "d7190f3f-6064-46cd-a77d-91308395e408",
+            "colId": "ba898024-c220-4b05-ac48-52ff94dac930",
             "containerId": "",
             "name": "deleteMyCourse",
             "url": "http://localhost:10433/academic/teacher/deleteMeCourse",
             "method": "POST",
             "sortNum": 40000,
-            "created": "2024-02-18T05:51:28.600Z",
-            "modified": "2024-02-18T06:09:01.352Z",
+            "created": "2024-02-23T14:50:44.267Z",
+            "modified": "2024-02-23T16:41:35.412Z",
             "headers": [
                 {
                     "name": "x-access-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNkNjQyNmMwMjg2NmI5NzZhZjgyOTUiLCJpYXQiOjE3MDgyMzYwNjMsImV4cCI6MTcwODIzOTY2M30.rRQ23yszT2xP48CdBcTupihIqRe0x5LMw3GwaJB6AhY"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4YzYwMDk1NTUwN2ZlZjc2MjQxNTIiLCJpYXQiOjE3MDg3MDUzMDcsImV4cCI6MTcwODcwODkwN30.7xc6sgdMRc3uPm5FSvXSEI5dd45mqkdJld2KnncM8_w"
                 }
             ],
             "params": [],
@@ -92,25 +92,25 @@
             "tests": []
         },
         {
-            "_id": "43933793-3427-4739-867d-9dc804b69026",
-            "colId": "304270f6-6eb0-4da4-ab7c-0576adcfbde5",
+            "_id": "69834a52-6e59-45a7-aa27-c93ef9e5d04e",
+            "colId": "ba898024-c220-4b05-ac48-52ff94dac930",
             "containerId": "",
             "name": "editMyProfile Copy Copy",
             "url": "http://localhost:10433/academic/user/editMyProfile",
             "method": "PUT",
             "sortNum": 50000,
-            "created": "2024-02-18T06:19:58.904Z",
-            "modified": "2024-02-18T06:21:20.378Z",
+            "created": "2024-02-23T14:50:44.268Z",
+            "modified": "2024-02-23T16:46:18.610Z",
             "headers": [
                 {
                     "name": "x-access-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNkNjQyNmMwMjg2NmI5NzZhZjgyOTUiLCJpYXQiOjE3MDgyMzYwNjMsImV4cCI6MTcwODIzOTY2M30.rRQ23yszT2xP48CdBcTupihIqRe0x5LMw3GwaJB6AhY"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4YzYwMDk1NTUwN2ZlZjc2MjQxNTIiLCJpYXQiOjE3MDg3MDUzMDcsImV4cCI6MTcwODcwODkwN30.7xc6sgdMRc3uPm5FSvXSEI5dd45mqkdJld2KnncM8_w"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\":\"Braulio Echeverria\",\n  \"estado\": true\n}",
+                "raw": "{\n  \"nombre\":\"Victor Alvarez\",\n  \"estado\": true\n}",
                 "form": []
             },
             "tests": []
