@@ -85,7 +85,9 @@ const userTeacherPost = async (req, res) =>{
 }
 
 const editMyProfile = async (req, res) => {
-    try {
+    console.log('');
+    console.log('--- [NOTES] editMyProfile.user')
+    try { 
         const user = await isToken(req, res);
         const { _id, correo,role,  ...resto} = req.body;
         await User.findByIdAndUpdate(user._id, resto);
@@ -95,8 +97,9 @@ const editMyProfile = async (req, res) => {
         
         
     }catch (e) {
-        res.status(500).json({ msg: 'Hubo un error al editar el perfil.' });
-        throw new Error(e);
+        console.log('Hubo un error al editar el perfil.');
+        // res.status(500).json({ msg: 'Hubo un error al editar el perfil.' });
+        // throw new Error(e);
     }
 }
 

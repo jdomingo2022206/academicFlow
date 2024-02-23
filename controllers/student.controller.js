@@ -5,6 +5,8 @@ const {isToken} = require('../helpers/tk-methods');
 
 
 const addMeCourse = async (req, res) => {
+    console.log('');
+    console.log('--- [NOTES] addMeCourse.student')
     try {
         const { courseName } = req.body;
         const user = await isToken(req, res);
@@ -46,24 +48,30 @@ const addMeCourse = async (req, res) => {
         return res.status(200).json({ msg: `El estudiante ${newUserObject.name} || ${newUserObject.mail} ha sido agregado al curso ${course.name}.` });
         
     } catch (e) {
-        res.status(500).json({ msg: 'Hubo un error al agregar estudiante al curso.' });
-        throw new Error(e);
+        console.log('Hubo un error al agregar estudiante al curso.')
+        // res.status(500).json({ msg: 'Hubo un error al agregar estudiante al curso.' });
+        // throw new Error(e);
     }
 }
 
 const myCourses = async (req, res) => {
+    console.log('');
+    console.log('--- [NOTES] myCourses.student')
     try {
         const user = await isToken(req, res);
         const courses = await Course.find({students: user._id, estado: true});
         res.status(200).json({ courses });
     } catch (e) {
-        res.status(500).json({ msg: 'Hubo un error al obtener los cursos del estudiante.' });
-        throw new Error(e);
+        console.log('Hubo un error al obtener los cursos del estudiante.')
+        // res.status(500).json({ msg: 'Hubo un error al obtener los cursos del estudiante.' });
+        // throw new Error(e);
     }
 
 }
 
 const outMeCourse = async (req, res) => {
+    console.log('');
+    console.log('--- [NOTES] outMeCourse.student')
     try {
         const { courseName } = req.body;
         const user = await isToken(req, res);
@@ -95,8 +103,9 @@ const outMeCourse = async (req, res) => {
         return res.status(200).json({ msg: `El estudiante ${newUserObject.name} || ${newUserObject.mail} ha sido eliminado del curso ${course.name}.` });
         
     } catch (e) {
-        res.status(500).json({ msg: 'Hubo un error al eliminar estudiante del curso.' });
-        throw new Error(e);
+        console.log('Hubo un error al eliminar estudiante del curso.');
+        // res.status(500).json({ msg: 'Hubo un error al eliminar estudiante del curso.' });
+        // throw new Error(e);
     }
 
 }

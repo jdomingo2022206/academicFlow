@@ -5,6 +5,8 @@ const {isToken} = require('../helpers/tk-methods');
 
 
 const createMyCourse = async (req, res) => {
+    console.log('')
+    console.log('--- [NOTES] createMyCourse.teacher')
     try {   
         const { courseName, desc } = req.body;  
         const user = await isToken(req, res);
@@ -19,26 +21,32 @@ const createMyCourse = async (req, res) => {
         await course.save();
         res.status(200).json({ course });
     } catch (error) {
-        console.error('Error al crear el curso:', error);
-        res.status(500).json({ msg: 'Hubo un error al crear el curso.' });
+        console.log('Hubo un error al crear el curso.')
+        // console.error('Error al crear el curso:', error);
+        // res.status(500).json({ msg: 'Hubo un error al crear el curso.' });
     }
         
         
 }
 
 const myCourses = async (req, res) => {
+    console.log('')
+    console.log('--- [NOTES] myCourses.teacher')
     try {
         const user = await isToken(req, res);
         const courses = await Course.find({teacherId: user._id});
         res.status(200).json({ courses });
     } catch (e) {
-        res.status(500).json({ msg: 'Hubo un error al obtener los cursos del profesor.' });
-        throw new Error(e);
+        console.log('Hubo un error al obtener los cursos del profesor.');
+        // res.status(500).json({ msg: 'Hubo un error al obtener los cursos del profesor.' });
+        // throw new Error(e);
     }
 
 }
 
 const deleteMeCourse = async (req, res) => {
+    console.log('')
+    console.log('--- [NOTES] deleteMeCourse.teacher')
     try {
         const { courseName } = req.body;
         const user = await isToken(req, res);
@@ -60,8 +68,9 @@ const deleteMeCourse = async (req, res) => {
         await course.save();
         res.status(200).json({ msg: `El curso ${course.name} ha sido eliminado.` });
     } catch (e) {
-        res.status(500).json({ msg: 'Hubo un error al eliminar el curso.' });
-        throw new Error(e);
+        console.log('Hubo un error al eliminar el curso.')
+        // res.status(500).json({ msg: 'Hubo un error al eliminar el curso.' });
+        // throw new Error(e);
     }
 }
 
@@ -76,8 +85,9 @@ const editMyProfile = async (req, res) => {
         
         
     }catch (e) {
-        res.status(500).json({ msg: 'Hubo un error al editar el perfil.' });
-        throw new Error(e);
+        console.log('Hubo un error al editar el perfil.')
+        // res.status(500).json({ msg: 'Hubo un error al editar el perfil.' });
+        // throw new Error(e);
     }
 }
 
