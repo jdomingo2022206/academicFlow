@@ -16,8 +16,8 @@ const createMyCourse = async (req, res) => {
         if (user.role !== 'TEACHER_ROLE') {
             return res.status(403).json({ msg: 'No estas autorizado.' });
         }
-        
-        const course = new Course({ courseName, desc, teacherId: user._id, teacherName: user.nombre, teacherMail:user.correo});
+        const name = courseName;
+        const course = new Course({name, desc, teacherId: user._id, teacherName: user.nombre, teacherMail:user.correo}) 
         await course.save();
         res.status(200).json({ course });
     } catch (error) {
@@ -60,7 +60,7 @@ const deleteMeCourse = async (req, res) => {
         console.log("Id de los teacher usersd: "+user._id);
         if (!course) {
             return res.status(400).json({ msg: `El curso ${courseName} no existe en la base de datos.`});
-        } else if (course.teacherId.toString() === user._id) {
+        } else if (course.teacherId.toString() !== user._id) {
             return res.status(400).json({ msg: `El profesor ${user.nombre} || ${user.correo} no es el dueño del curso ${course.name}.`});
         }
         
